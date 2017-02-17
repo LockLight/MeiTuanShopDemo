@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MTHomeViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    
+    MTHomeViewController *homeVc = [[MTHomeViewController alloc]init];
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:homeVc];
+    
+    _window.rootViewController = nav;
+    
+    [_window makeKeyAndVisible];
+    
     return YES;
 }
 

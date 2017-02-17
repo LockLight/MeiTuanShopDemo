@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MTHomeViewController.h
 //  美团外卖Demo
 //
 //  Created by locklight on 17/2/17.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MTHomeViewController : UIViewController
 
 @end
-

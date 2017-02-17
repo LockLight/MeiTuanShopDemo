@@ -12,6 +12,9 @@
 #ifdef __OBJC__
 
 #import "Masonry.h"
+#import "CZAdditions.h"
+
+#define NAV_STATUS_HEIGHT 64
 
 #endif
 

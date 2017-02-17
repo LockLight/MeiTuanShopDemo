@@ -17,7 +17,7 @@
 
 @implementation MTShopViewController
 
-- (void)viewWillDisappear:(BOOL)animated{
+- (void)viewDidAppear:(BOOL)animated{
     self.navigationController.navigationBar.alpha = 0;
 }
 
@@ -49,7 +49,6 @@
     
     //中间:商家功能分类视图
     UIView *categoryView = [[UIView alloc]init];
-    categoryView.backgroundColor = [UIColor colorWithRed:153.0 /255.0 green:204 /255.0 blue:204 /255.0 alpha:1];
     [self.view addSubview:categoryView];
     
     [categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -107,10 +106,6 @@
     //设置给导航条
     self.navigationController.navigationBar.alpha = alpha;
 }
-
-
-
-
 
 
 

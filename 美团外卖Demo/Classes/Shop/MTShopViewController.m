@@ -7,11 +7,15 @@
 //
 
 #import "MTShopViewController.h"
+#import "MTCategoryView.h"
 
 #define TOPVIEW_HEIGHT 124
 
-@interface MTShopViewController ()
+@interface MTShopViewController ()<UIScrollViewDelegate>
+
 @property (nonatomic, weak) UIView *topView;
+@property (nonatomic, weak) UIScrollView *srcView;
+@property (nonatomic, weak) MTCategoryView *categoryView;
 
 @end
 
@@ -68,6 +72,39 @@
         make.bottom.equalTo(self.view);
     }];
     
+    //给srcView添加三个根控制器
+    NSArray *classNameList = @[@"MTOrderViewController",
+                               @"MTCommentViewController",
+                               @"MTBussinessViewController"];
+    
+    //创建保持根视图的数组
+    NSMutableArray<UIView *> *viewList = [NSMutableArray array];
+    for (NSInteger i = 0; i < classNameList.count; i++) {
+        Class cls = NSClassFromString(classNameList[i]);
+        
+        UIViewController *vc = [[cls alloc]init];
+    
+        [scrView addSubview:vc.view];
+        [viewList addObject:vc.view];
+    }
+    
+    //开启分页
+    scrView.pagingEnabled = YES;
+    
+    _srcView = scrView;
+    
+    //设置srcView代理
+    scrView.delegate = self;
+    
+    //设置scrView子视图约束
+    [viewList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    [viewList mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.bottom.equalTo(scrView);
+        //根据视图的宽高,计算contsize
+        make.size.equalTo(scrView);
+    }];
+    
+    
     //添加拖拽手势
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(scaleTopView:)];
     
@@ -107,6 +144,10 @@
     self.navigationController.navigationBar.alpha = alpha;
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    //计算当前滚动距离
+    CGFloat offsetX  
+}
 
 
 

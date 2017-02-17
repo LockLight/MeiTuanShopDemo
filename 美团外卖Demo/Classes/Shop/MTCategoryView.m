@@ -81,7 +81,8 @@
     //当前按钮的tag值传递给当前视图的tag
     self.tag = sender.tag;
  
-    
+    //发送消息给接受者
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 

@@ -6,8 +6,10 @@
 //  Copyright © 2017年 LockLight. All rights reserved.
 //
 
-#import "MTBaseView.h"
+#import "MTBaseControl.h"
 
-@interface MTCategoryView : MTBaseView
+@interface MTCategoryView : MTBaseControl
+
+@property (nonatomic, assign) CGFloat offsetX;
 
 @end

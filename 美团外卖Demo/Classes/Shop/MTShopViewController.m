@@ -52,7 +52,7 @@
     
     
     //中间:商家功能分类视图
-    UIView *categoryView = [[UIView alloc]init];
+    MTCategoryView *categoryView = [[MTCategoryView alloc]init];
     [self.view addSubview:categoryView];
     
     [categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -60,6 +60,10 @@
         make.top.equalTo(topView.mas_bottom);
         make.height.mas_equalTo(37);
     }];
+    
+    [categoryView addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventValueChanged];
+    
+    _categoryView = categoryView;
     
     //底部:scrollView
     UIScrollView *scrView = [[UIScrollView alloc]init];
@@ -145,8 +149,17 @@
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    //计算当前滚动距离
-    CGFloat offsetX  
+    //计算当前滚动偏移量
+    CGFloat offsetX  = scrollView.contentOffset.x /3;
+    
+    //赋值给分类导航条偏移量
+    _categoryView.offsetX = offsetX;
+}
+
+- (void)changePage:(MTCategoryView *)sender{
+    NSLog(@"%zd",sender.tag);
+    
+    [_srcView setContentOffset:CGPointMake(sender.tag * _srcView.bounds.size.width, 0) animated:YES];
 }
 
 

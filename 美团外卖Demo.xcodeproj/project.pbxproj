@@ -490,6 +490,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "美团外卖Demo/MTPrefixHeader.pch";
 				INFOPLIST_FILE = "美团外卖Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LockLightz-gmail.com.----Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -504,6 +505,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "美团外卖Demo/MTPrefixHeader.pch";
 				INFOPLIST_FILE = "美团外卖Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LockLightz-gmail.com.----Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";

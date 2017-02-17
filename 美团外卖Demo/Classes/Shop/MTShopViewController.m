@@ -11,10 +11,15 @@
 #define TOPVIEW_HEIGHT 124
 
 @interface MTShopViewController ()
+@property (nonatomic, weak) UIView *topView;
 
 @end
 
 @implementation MTShopViewController
+
+- (void)viewWillDisappear:(BOOL)animated{
+    self.navigationController.navigationBar.alpha = 0;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,6 +28,7 @@
     
     //
 }
+
 
 - (void)setupUI{
     //MARK: 头部顶部视图
@@ -34,6 +40,10 @@
         make.left.right.top.equalTo(self.view);
         make.height.mas_equalTo(TOPVIEW_HEIGHT);
     }];
+    
+    
+    //赋值给属性
+    _topView = topView;
     
     
     
@@ -59,7 +69,45 @@
         make.bottom.equalTo(self.view);
     }];
     
+    //添加拖拽手势
+    UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(scaleTopView:)];
+    
+    [self.view addGestureRecognizer:pan];
 }
+
+#pragma mark - 拖拽手势自动调用的方法
+-(void)scaleTopView:(UIPanGestureRecognizer *)sender{
+    
+    //获取当前拖拽的位移值
+    CGPoint offset = [sender translationInView:sender.view];
+    
+    NSLog(@"%.2f",offset.y);
+    //复位
+    [sender setTranslation:CGPointZero inView:sender.view];
+    
+    CGFloat height = _topView.bounds.size.height + offset.y;
+    
+    if(height < NAV_STATUS_HEIGHT  || height > TOPVIEW_HEIGHT){
+        return;
+    }
+    
+    [_topView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.height.mas_equalTo(height);
+    }];
+    
+    //可移动的高度
+    CGFloat offsetHeight = TOPVIEW_HEIGHT - NAV_STATUS_HEIGHT;
+    
+    //取出之前的alpha
+    CGFloat currentAlpha = self.navigationController.navigationBar.alpha;
+    
+    //用当前移动的高度
+    CGFloat alpha =  currentAlpha - offset.y * 1 / offsetHeight;
+    
+    //设置给导航条
+    self.navigationController.navigationBar.alpha = alpha;
+}
+
 
 
 

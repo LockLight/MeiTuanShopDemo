@@ -87,7 +87,12 @@
         Class cls = NSClassFromString(classNameList[i]);
         
         UIViewController *vc = [[cls alloc]init];
-    
+        
+        //视图拖拽消失bug:需添加子视图控制器添加为父控制的容器控制器
+        [self addChildViewController:vc];
+        [vc didMoveToParentViewController:self];
+        
+        //添加视图到scrollView
         [scrView addSubview:vc.view];
         [viewList addObject:vc.view];
     }

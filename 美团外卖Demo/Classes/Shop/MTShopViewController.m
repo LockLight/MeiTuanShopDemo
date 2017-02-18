@@ -135,17 +135,22 @@
         make.height.mas_equalTo(height);
     }];
     
+    [self.view  layoutIfNeeded];
+    
     //可移动的高度
     CGFloat offsetHeight = TOPVIEW_HEIGHT - NAV_STATUS_HEIGHT;
     
-    //取出之前的alpha
-    CGFloat currentAlpha = self.navigationController.navigationBar.alpha;
+//    //取出之前的alpha
+//    CGFloat currentAlpha = self.navigationController.navigationBar.alpha;
+//
+//    //用当前移动的高度
+//    CGFloat alpha =  currentAlpha - offset.y * 1 / offsetHeight;
     
-    //用当前移动的高度
-    CGFloat alpha =  currentAlpha - offset.y * 1 / offsetHeight;
+    //计算可移动高度内alpha值变化比例
+    CGFloat eachAlpha = 1 / offsetHeight;
     
     //设置给导航条
-    self.navigationController.navigationBar.alpha = alpha;
+    self.navigationController.navigationBar.alpha -= eachAlpha * offset.y;
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{

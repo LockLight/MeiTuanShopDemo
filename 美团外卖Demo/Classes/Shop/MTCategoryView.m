@@ -19,13 +19,22 @@
     [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(offsetX);
     }];
+    
+    //当前按钮索引
+    NSInteger index = offsetX / _lineView.bounds.size.width;
+    //取消原先按钮选中状态
+    _selectBtn.selected = NO;
+    
+    //设置当前按钮选中状态
+    _selectBtn = _btnList[index];
+    _selectBtn.selected = YES;
 }
 
 - (void)setupUI{
     //创建3个btn
     NSArray *titleArr = @[@"菜式",@"评价",@"商家"];
     
-    NSMutableArray<UIButton *> *btnList = [NSMutableArray array];
+    _btnList = [NSMutableArray arrayWithCapacity:titleArr.count];
     
     NSInteger index = 0;
     
@@ -35,17 +44,20 @@
         btn.tag = index++;
         
         [self addSubview:btn];
-        [btnList addObject:btn];
+        [_btnList addObject:btn];
         
         [btn addTarget:self action:@selector(changeCategory:) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    [btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
-    [btnList mas_makeConstraints:^(MASConstraintMaker *make) {
+    [_btnList mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedSpacing:0 leadSpacing:0 tailSpacing:0];
+    [_btnList mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(self);
     }];
     
-    _btnList = btnList;
+    //设置默认启动按钮为第一个
+    _btnList[0].selected = YES;
+    _selectBtn = _btnList[0];
+    
     
     //创建黄色导航条
     UIView *lineView =[[UIView alloc]init];
@@ -54,43 +66,32 @@
     
     [lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.bottom.equalTo(self);
-        make.width.equalTo(btnList[0]);
+        make.width.equalTo(_btnList[0]);
         make.height.mas_equalTo(4);
     }];
     
     _lineView = lineView;
-    
-    //设置默认启动按钮为第一个
-    btnList[0].selected = YES;
-    _selectBtn = btnList[0];
 }
 
 - (void)changeCategory:(UIButton *)sender{
-    //选中原先按钮的选中状态
-    _selectBtn.selected = NO;
+//    //选中原先按钮的选中状态
+//    _selectBtn.selected = NO;
+//    
+//    //设置当前按钮选中状态
+//    sender.selected = YES;
+//    _selectBtn = sender;
     
-    //设置当前按钮选中状态
-    sender.selected = YES;
-    _selectBtn = sender;
-    
-//    //根据当前按钮tag值,计算当前导航条的宽度
-//    CGFloat offsetX = sender.tag * sender.bounds.size.width;
-    
-    //已设置setter方法内更新约束,再次调用会出现二次计算bug
-//    [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {
-//        make.left.equalTo(self).offset(offsetX);
-//    }];
-    
-    //根据当前frame立即更新位置
-    [UIView animateWithDuration:0.4 animations:^{
-        [self layoutIfNeeded];
-    }];
     
     //当前按钮的tag值传递给当前视图的tag
     self.tag = sender.tag;
  
     //发送消息给接受者
     [self sendActionsForControlEvents:UIControlEventValueChanged];
+    
+    //根据当前frame立即更新位置
+    [UIView animateWithDuration:0.4 animations:^{
+        [self layoutIfNeeded];
+    }];
 }
 
 

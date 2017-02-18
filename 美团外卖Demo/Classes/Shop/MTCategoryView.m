@@ -73,8 +73,8 @@
     sender.selected = YES;
     _selectBtn = sender;
     
-    //根据当前按钮tag值,计算当前导航条的宽度
-    CGFloat offsetX = sender.tag * sender.bounds.size.width;
+//    //根据当前按钮tag值,计算当前导航条的宽度
+//    CGFloat offsetX = sender.tag * sender.bounds.size.width;
     
     //已设置setter方法内更新约束,再次调用会出现二次计算bug
 //    [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {

@@ -7,6 +7,8 @@
 //
 
 #import "MTOrderViewController.h"
+#import "MTFood.h"
+#import "MTLeftCell.h"
 
 static NSString *leftCell = @"leftCell";
 static NSString *rightCell = @"rightCell";
@@ -18,12 +20,17 @@ static NSString *rightCell = @"rightCell";
 
 @end
 
-@implementation MTOrderViewController
+@implementation MTOrderViewController{
+    NSArray<MTFood *> *_foodList;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRed:102 /255.0 green:204 /255.0 blue:204 /255.0 alpha:1];
+    
+    self.view.backgroundColor = [UIColor colorWithRed:153 /255.0 green:204 /255.0 blue:205 /255.0 alpha:1];
+    
+    [self loadData];
 }
 
 - (void)setupUI{
@@ -35,7 +42,7 @@ static NSString *rightCell = @"rightCell";
     [self.view addSubview:rightTableView];
     //MARK:底部购物栏tableview
     UITableView *cartView = [[UITableView alloc]init];
-    cartView.backgroundColor = [UIColor colorWithRed:153 /255.0 green:102 /255.0 blue:204 /255.0 alpha:1];
+    cartView.backgroundColor = [UIColor colorWithRed:153 /255.0 green:204 /255.0 blue:205 /255.0 alpha:1];
     [self.view addSubview:cartView];
     
     
@@ -47,7 +54,7 @@ static NSString *rightCell = @"rightCell";
     }];
     
     [rightTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(leftTableView.mas_right).offset(9);
+        make.left.equalTo(leftTableView.mas_right).offset(6);
         make.right.top.equalTo(self.view);
         make.bottom.equalTo(cartView.mas_top);
     }];
@@ -64,35 +71,59 @@ static NSString *rightCell = @"rightCell";
     leftTableView.dataSource = self;
     rightTableView.dataSource = self;
     
-    [leftTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:leftCell];
+    [leftTableView registerClass:[MTLeftCell class] forCellReuseIdentifier:leftCell];
     [rightTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:rightCell];
 }
 
+
+#pragma mark  数据源方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if(tableView == _leftTableView){
         return 1;
     }
-    return 1;
+    return _foodList.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == _leftTableView) {
-        return 10;
+        return _foodList.count;
     }
-    return 7;
+    return _foodList[section].spus.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView == _leftTableView){
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:leftCell forIndexPath:indexPath];
-        cell.textLabel.text = @"热销推荐";
-        
+        MTLeftCell *cell = [tableView dequeueReusableCellWithIdentifier:leftCell forIndexPath:indexPath];
+        cell.food = _foodList[indexPath.row];
+    
         return cell;
     }
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:rightCell forIndexPath:indexPath];
     cell.textLabel.text = @"草莓圣代";
     
     return cell;
+}
+
+#pragma mark 解析加载jason数据
+- (void)loadData{
+    //获取地址 反序列化jason数据
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"food.json" withExtension:nil];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    NSDictionary *dataAll = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+    
+    //定位准备数据
+    NSArray *foodArr = dataAll[@"data"][@"food_spu_tags"];
+    
+    //准备模型数组
+    NSMutableArray *foodList = [NSMutableArray array];
+    for (NSDictionary *dict in foodArr) {
+        
+        MTFood *model = [MTFood new];
+        [model setValuesForKeysWithDictionary:dict];
+        [foodList addObject:model];
+        
+        }
+        _foodList = foodList.copy;
 }
 
 - (void)didReceiveMemoryWarning {

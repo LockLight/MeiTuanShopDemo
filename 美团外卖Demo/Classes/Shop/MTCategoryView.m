@@ -74,14 +74,6 @@
 }
 
 - (void)changeCategory:(UIButton *)sender{
-//    //选中原先按钮的选中状态
-//    _selectBtn.selected = NO;
-//    
-//    //设置当前按钮选中状态
-//    sender.selected = YES;
-//    _selectBtn = sender;
-    
-    
     //当前按钮的tag值传递给当前视图的tag
     self.tag = sender.tag;
  

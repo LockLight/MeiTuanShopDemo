@@ -41,6 +41,11 @@
 		CDEA07901E57DD0100A42835 /* MTBussinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA078F1E57DD0100A42835 /* MTBussinessViewController.m */; };
 		CDEA07931E57DD1600A42835 /* MTCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07921E57DD1600A42835 /* MTCommentViewController.m */; };
 		CDEA07961E57DD2500A42835 /* MTOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07951E57DD2500A42835 /* MTOrderViewController.m */; };
+		CDEA07991E58289300A42835 /* MTFood.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07981E58289300A42835 /* MTFood.m */; };
+		CDEA079D1E582B1200A42835 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = CDEA079C1E582B1200A42835 /* food.json */; };
+		CDEA07A41E5841AD00A42835 /* MTFoodDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07A31E5841AD00A42835 /* MTFoodDetail.m */; };
+		CDEA07A71E58623C00A42835 /* MTLeftCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07A61E58623C00A42835 /* MTLeftCell.m */; };
+		CDEA07AA1E586E0400A42835 /* MTRightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07A91E586E0400A42835 /* MTRightCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +122,15 @@
 		CDEA07921E57DD1600A42835 /* MTCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCommentViewController.m; sourceTree = "<group>"; };
 		CDEA07941E57DD2500A42835 /* MTOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderViewController.h; sourceTree = "<group>"; };
 		CDEA07951E57DD2500A42835 /* MTOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderViewController.m; sourceTree = "<group>"; };
+		CDEA07971E58289300A42835 /* MTFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFood.h; sourceTree = "<group>"; };
+		CDEA07981E58289300A42835 /* MTFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFood.m; sourceTree = "<group>"; };
+		CDEA079C1E582B1200A42835 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
+		CDEA07A21E5841AD00A42835 /* MTFoodDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodDetail.h; sourceTree = "<group>"; };
+		CDEA07A31E5841AD00A42835 /* MTFoodDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetail.m; sourceTree = "<group>"; };
+		CDEA07A51E58623C00A42835 /* MTLeftCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLeftCell.h; sourceTree = "<group>"; };
+		CDEA07A61E58623C00A42835 /* MTLeftCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLeftCell.m; sourceTree = "<group>"; };
+		CDEA07A81E586E0400A42835 /* MTRightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRightCell.h; sourceTree = "<group>"; };
+		CDEA07A91E586E0400A42835 /* MTRightCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRightCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,9 +264,9 @@
 		CDAC20871E571212000AF61C /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				CDEA078A1E57DCA700A42835 /* Order */,
 				CDEA078D1E57DCCA00A42835 /* Bussiness */,
 				CDEA078C1E57DCC000A42835 /* Comment */,
-				CDEA078A1E57DCA700A42835 /* Order */,
 				CDAC20B51E57199C000AF61C /* MTShopViewController.h */,
 				CDAC20B61E57199C000AF61C /* MTShopViewController.m */,
 				CDA730F01E57661200F8F01E /* MTCategoryView.h */,
@@ -297,8 +311,9 @@
 		CDEA078A1E57DCA700A42835 /* Order */ = {
 			isa = PBXGroup;
 			children = (
-				CDEA07941E57DD2500A42835 /* MTOrderViewController.h */,
-				CDEA07951E57DD2500A42835 /* MTOrderViewController.m */,
+				CDEA07A11E582B8900A42835 /* View */,
+				CDEA079B1E5828F200A42835 /* Controller */,
+				CDEA079A1E5828C600A42835 /* Model */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -319,6 +334,38 @@
 				CDEA078F1E57DD0100A42835 /* MTBussinessViewController.m */,
 			);
 			name = Bussiness;
+			sourceTree = "<group>";
+		};
+		CDEA079A1E5828C600A42835 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CDEA079C1E582B1200A42835 /* food.json */,
+				CDEA07971E58289300A42835 /* MTFood.h */,
+				CDEA07981E58289300A42835 /* MTFood.m */,
+				CDEA07A21E5841AD00A42835 /* MTFoodDetail.h */,
+				CDEA07A31E5841AD00A42835 /* MTFoodDetail.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CDEA079B1E5828F200A42835 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CDEA07941E57DD2500A42835 /* MTOrderViewController.h */,
+				CDEA07951E57DD2500A42835 /* MTOrderViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CDEA07A11E582B8900A42835 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CDEA07A51E58623C00A42835 /* MTLeftCell.h */,
+				CDEA07A61E58623C00A42835 /* MTLeftCell.m */,
+				CDEA07A81E586E0400A42835 /* MTRightCell.h */,
+				CDEA07A91E586E0400A42835 /* MTRightCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDAC20521E57113A000AF61C /* LaunchScreen.storyboard in Resources */,
+				CDEA079D1E582B1200A42835 /* food.json in Resources */,
 				CDAC204F1E57113A000AF61C /* Assets.xcassets in Resources */,
 				CDAC20A81E57157B000AF61C /* Info.plist in Resources */,
 			);
@@ -401,13 +449,17 @@
 				CDAC207F1E5711C2000AF61C /* UILabel+CZAddition.m in Sources */,
 				CDEA07961E57DD2500A42835 /* MTOrderViewController.m in Sources */,
 				CDAC207E1E5711C2000AF61C /* UIColor+CZAddition.m in Sources */,
+				CDEA07A41E5841AD00A42835 /* MTFoodDetail.m in Sources */,
 				CDAC207C1E5711C2000AF61C /* NSObject+CZAddition.m in Sources */,
 				CDAC20851E5711C2000AF61C /* MTBaseViewController.m in Sources */,
 				CDAC20B21E57157B000AF61C /* ViewController+MASAdditions.m in Sources */,
 				CDAC20B11E57157B000AF61C /* View+MASAdditions.m in Sources */,
 				CDAC20831E5711C2000AF61C /* MTBaseControl.m in Sources */,
+				CDEA07A71E58623C00A42835 /* MTLeftCell.m in Sources */,
+				CDEA07991E58289300A42835 /* MTFood.m in Sources */,
 				CDAC20AD1E57157B000AF61C /* MASViewAttribute.m in Sources */,
 				CDAC207D1E5711C2000AF61C /* UIButton+CZAddition.m in Sources */,
+				CDEA07AA1E586E0400A42835 /* MTRightCell.m in Sources */,
 				CDA730F21E57661200F8F01E /* MTCategoryView.m in Sources */,
 				CDAC20791E5711C2000AF61C /* NSArray+CZAddition.m in Sources */,
 				CDAC20841E5711C2000AF61C /* MTBaseView.m in Sources */,

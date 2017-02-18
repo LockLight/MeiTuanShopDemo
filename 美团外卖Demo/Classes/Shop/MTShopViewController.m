@@ -11,7 +11,7 @@
 
 #define TOPVIEW_HEIGHT 124
 
-@interface MTShopViewController ()<UIScrollViewDelegate>
+@interface MTShopViewController ()<UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 @property (nonatomic, weak) UIView *topView;
 @property (nonatomic, weak) UIScrollView *srcView;
@@ -27,10 +27,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor colorWithRed:102.0 /255.0 green:205 /255.0 blue:153 /255.0 alpha:1];
     
-    //
+    self.view.backgroundColor = [UIColor colorWithRed:102.0 /255.0 green:205 /255.0 blue:153 /255.0 alpha:1];
 }
 
 
@@ -118,6 +116,14 @@
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(scaleTopView:)];
     
     [self.view addGestureRecognizer:pan];
+    
+    pan.delegate = self;
+}
+
+
+#pragma mark 开启多种手势交互
+- (bool)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
 }
 
 #pragma mark - 拖拽手势自动调用的方法
@@ -145,12 +151,6 @@
     //可移动的高度
     CGFloat offsetHeight = TOPVIEW_HEIGHT - NAV_STATUS_HEIGHT;
     
-//    //取出之前的alpha
-//    CGFloat currentAlpha = self.navigationController.navigationBar.alpha;
-//
-//    //用当前移动的高度
-//    CGFloat alpha =  currentAlpha - offset.y * 1 / offsetHeight;
-    
     //计算可移动高度内alpha值变化比例
     CGFloat eachAlpha = 1 / offsetHeight;
     
@@ -167,7 +167,7 @@
 }
 
 - (void)changePage:(MTCategoryView *)sender{
-    NSLog(@"%zd",sender.tag);
+//    NSLog(@"%zd",sender.tag);
     
     [_srcView setContentOffset:CGPointMake(sender.tag * _srcView.bounds.size.width, 0) animated:YES];
 }

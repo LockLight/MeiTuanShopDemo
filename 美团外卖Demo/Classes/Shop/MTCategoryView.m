@@ -14,6 +14,13 @@
     UIButton *_selectBtn;   //记录上一次被选中的按钮
 }
 
+- (void)setOffsetX:(CGFloat)offsetX{
+    _offsetX = offsetX;
+    [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(offsetX);
+    }];
+}
+
 - (void)setupUI{
     //创建3个btn
     NSArray *titleArr = @[@"菜式",@"评价",@"商家"];
@@ -69,9 +76,10 @@
     //根据当前按钮tag值,计算当前导航条的宽度
     CGFloat offsetX = sender.tag * sender.bounds.size.width;
     
-    [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(offsetX);
-    }];
+    //已设置setter方法内更新约束,再次调用会出现二次计算bug
+//    [_lineView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.left.equalTo(self).offset(offsetX);
+//    }];
     
     //根据当前frame立即更新位置
     [UIView animateWithDuration:0.4 animations:^{

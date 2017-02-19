@@ -10,14 +10,10 @@
 
 @implementation MTFoodDetail
 
-- (void)setValue:(id)value forKey:(NSString *)key{
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
     if([key isEqualToString:@"description"]){
         _desc = value;
     }
-}
-
-- (void)setValue:(id)value forUndefinedKey:(NSString *)key{
-
 }
 
 @end

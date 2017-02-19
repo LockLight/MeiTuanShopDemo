@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTFoodDetail.h"
 
 @interface MTRightCell : UITableViewCell
+
+@property (nonatomic, strong)  MTFoodDetail *foodDetail;
 
 @end

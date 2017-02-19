@@ -132,7 +132,7 @@
     //获取当前拖拽的位移值
     CGPoint offset = [sender translationInView:sender.view];
     
-    NSLog(@"%.2f",offset.y);
+//    NSLog(@"%.2f",offset.y);
     //复位
     [sender setTranslation:CGPointZero inView:sender.view];
     

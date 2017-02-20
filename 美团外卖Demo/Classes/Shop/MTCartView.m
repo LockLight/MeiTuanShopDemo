@@ -20,7 +20,10 @@
 
 
 - (IBAction)ShowShoppingList:(UIButton *)sender {
-    
+    if(sender.selected){
+        NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+        [center postNotificationName:@"showShoppingList" object:self];
+    }
 }
 
 
@@ -39,7 +42,7 @@
     
     for (MTFoodDetail *foodDetail in _selectedFoods) {
         totalCount += foodDetail.goodsNum;
-        totalPrice += foodDetail.goodsNum + foodDetail.min_price;
+        totalPrice += foodDetail.goodsNum * foodDetail.min_price;
     }
     
     //菜式总数

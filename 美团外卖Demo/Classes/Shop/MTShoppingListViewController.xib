@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTShoppingListViewController">
+            <connections>
+                <outlet property="view" destination="Ut8-mC-kWu" id="CDI-NN-PcP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="NZt-BT-YVb">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUM-aN-KMM">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="k7T-tk-OOF"/>
+                        <constraint firstAttribute="height" constant="50" id="xOi-Ss-2iM"/>
+                    </constraints>
+                    <state key="normal" image="button_shoppingCart_noEmpty"/>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_shoppingCart_popTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="i2q-uV-Nt7">
+                    <rect key="frame" x="19" y="50" width="12" height="9"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="12" id="DpJ-PN-xQe"/>
+                        <constraint firstAttribute="height" constant="9" id="Yir-zo-lDc"/>
+                    </constraints>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-mC-kWu">
+                    <rect key="frame" x="0.0" y="59" width="375" height="608"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="nUM-aN-KMM" firstAttribute="top" secondItem="NZt-BT-YVb" secondAttribute="top" id="Cnr-dG-vlz"/>
+                <constraint firstAttribute="bottom" secondItem="Ut8-mC-kWu" secondAttribute="bottom" id="Jqh-eA-aVu"/>
+                <constraint firstItem="nUM-aN-KMM" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" id="WIB-ZL-KmU"/>
+                <constraint firstItem="Ut8-mC-kWu" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" id="bdw-O1-5Gq"/>
+                <constraint firstItem="Ut8-mC-kWu" firstAttribute="top" secondItem="i2q-uV-Nt7" secondAttribute="bottom" id="gFi-go-dhk"/>
+                <constraint firstAttribute="trailing" secondItem="Ut8-mC-kWu" secondAttribute="trailing" id="iDO-vw-Tzv"/>
+                <constraint firstItem="i2q-uV-Nt7" firstAttribute="centerX" secondItem="nUM-aN-KMM" secondAttribute="centerX" id="yfT-RQ-noZ"/>
+                <constraint firstItem="i2q-uV-Nt7" firstAttribute="top" secondItem="nUM-aN-KMM" secondAttribute="bottom" id="zXw-76-wQ3"/>
+            </constraints>
+            <point key="canvasLocation" x="38.5" y="-142.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_shoppingCart_noEmpty" width="50" height="50"/>
+        <image name="icon_shoppingCart_popTriangle" width="12" height="9"/>
+    </resources>
+</document>

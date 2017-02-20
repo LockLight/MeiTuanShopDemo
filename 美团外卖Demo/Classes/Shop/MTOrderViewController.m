@@ -12,6 +12,7 @@
 #import "MTRightCell.h"
 #import "MTRightHeaderView.h"
 #import "MTCartView.h"
+#import "MTShoppingListViewController.h"
 
 
 static NSString *leftCell = @"leftCell";
@@ -73,6 +74,15 @@ CAAnimationDelegate
     }
 }
 
+#pragma mark  通知事件接收后实现的方法
+- (void)showShoppingListVc:(MTCartView *)sender{
+    //实例化模态控制器
+    MTShoppingListViewController *shopListVC = [[MTShoppingListViewController alloc]init];
+    //推出控制器
+    [self presentViewController:shopListVC animated:YES completion:nil];
+}
+
+
 - (void)setupUI{
     //MARK:左侧tableView
     UITableView *leftTableView = [[UITableView alloc]init];
@@ -85,6 +95,10 @@ CAAnimationDelegate
     MTCartView *cartView = [nib instantiateWithOwner:nil options:nil].lastObject;
     cartView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:cartView];
+    
+    //监听购物栏视图的通知时间
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(showShoppingListVc:) name:@"showShoppingList" object:cartView];
     
     
     //MARK:三个tableView布局

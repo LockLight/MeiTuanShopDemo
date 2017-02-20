@@ -137,15 +137,30 @@ CAAnimationDelegate
     //取出动画对象内的视图对象
     UIImageView *redPointView = [anim valueForKey:@"redView"];
     [redPointView removeFromSuperview];
+    
+    //动画完成后将选中模型数组赋值给购物车视图
+    _cartView.selectedFoods = _selectedFood;
 }
 
 
 #pragma mark rightCell中按钮添加红点的代理方法
 - (void)rightCell:(MTRightCell *)rightCell andBtnPoint:(CGPoint)point{
-    //添加红点动画
-    [self startRedAnimation:rightCell andPoint:point];
-    //
-    
+    if(point.x == 0 && point.y == 0){
+        //购物车数量为0时  移除数组元素
+        if(rightCell.foodDetail.goodsNum == 0){
+            [_selectedFood removeObject:rightCell.foodDetail];
+        }
+        //移除后赋值给视图属性
+        _cartView.selectedFoods = _selectedFood;
+    }else{
+        //添加红点动画
+        [self startRedAnimation:rightCell andPoint:point];
+        //添加菜式模型数组
+        //判断是否又重复模型
+        if(![_selectedFood containsObject:rightCell.foodDetail]){
+            [_selectedFood addObject:rightCell.foodDetail];
+        }
+    }
 }
 
 - (void)startRedAnimation:(MTRightCell *)rightCell andPoint:(CGPoint)point{

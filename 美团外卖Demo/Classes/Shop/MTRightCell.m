@@ -209,6 +209,9 @@
 - (void)changeCountLabel:(UIButton *)sender{
     if(sender == _minusBtn){
         _foodDetail.goodsNum--;
+        if([self.delegate respondsToSelector:@selector(rightCell: andBtnPoint:)]){
+            [self.delegate rightCell:self andBtnPoint:CGPointZero];
+        }
     }else{
         _foodDetail.goodsNum++;
         if([self.delegate respondsToSelector:@selector(rightCell: andBtnPoint:)]){

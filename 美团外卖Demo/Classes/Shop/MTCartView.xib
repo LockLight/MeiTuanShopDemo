@@ -23,6 +23,9 @@
                     </constraints>
                     <state key="normal" image="button_shoppingCart_empty"/>
                     <state key="selected" image="button_shoppingCart_noEmpty"/>
+                    <connections>
+                        <action selector="ShowShoppingList:" destination="aG7-y7-alE" eventType="touchUpInside" id="pm7-Wr-wTx"/>
+                    </connections>
                 </button>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD7-OB-P5b">
                     <rect key="frame" x="40" y="-10" width="16" height="16"/>
@@ -30,7 +33,9 @@
                         <constraint firstAttribute="height" constant="16" id="2rG-Yu-pkD"/>
                         <constraint firstAttribute="width" constant="16" id="drJ-Nd-lYO"/>
                     </constraints>
-                    <state key="normal" title="10" backgroundImage="icon_food_count_bg"/>
+                    <state key="normal" title="10" backgroundImage="icon_food_count_bg">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="购物栏空空如也~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGh-Tc-ijF">
                     <rect key="frame" x="64" y="15.5" width="100.5" height="16"/>
@@ -65,7 +70,7 @@
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
-                <outlet property="cartBtn" destination="e05-O9-AFY" id="wUT-Th-r9D"/>
+                <outlet property="cartBtn" destination="e05-O9-AFY" id="m6f-pG-9lp"/>
                 <outlet property="commitBtn" destination="tsd-bv-7Vc" id="g7X-Uw-XCo"/>
                 <outlet property="countBtn" destination="GD7-OB-P5b" id="xOE-Rb-wMW"/>
                 <outlet property="priceLabel" destination="rGh-Tc-ijF" id="YgJ-bs-dVW"/>

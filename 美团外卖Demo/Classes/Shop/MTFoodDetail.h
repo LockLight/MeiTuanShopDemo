@@ -23,4 +23,5 @@
 @property (nonatomic, assign) NSInteger praise_num;
 //商品购买数
 @property (nonatomic, assign) NSInteger goodsNum;
+
 @end

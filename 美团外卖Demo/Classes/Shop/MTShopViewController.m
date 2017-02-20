@@ -35,7 +35,7 @@
 - (void)setupUI{
     //MARK: 头部顶部视图
     UIView *topView = [[UIView alloc]init];
-    topView.backgroundColor = [UIColor colorWithRed:255 /255.0 green:204 /255.0 blue:204 /255.0 alpha:1];
+    topView.backgroundColor = [UIColor colorWithRed:153 /255.0 green:204 /255.0 blue:205 /255.0 alpha:1];
     [self.view addSubview:topView];
     
     [topView mas_makeConstraints:^(MASConstraintMaker *make) {

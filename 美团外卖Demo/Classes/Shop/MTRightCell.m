@@ -60,8 +60,7 @@
     _praiseNum.text = [NSString stringWithFormat:@"%zd",foodDetail.praise_num];
     
     //价格
-    NSString *rmb =  @"¥";
-    _priceLabel.text = [NSString stringWithFormat:@"%@ %.1f",rmb,foodDetail.min_price];
+    _priceLabel.text = [NSString stringWithFormat:@"¥ %.1f",foodDetail.min_price];
     
     //描述
     _descLabel.text = foodDetail.desc;

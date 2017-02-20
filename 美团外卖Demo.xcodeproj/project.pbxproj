@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD9C90F91E5B06D8000AA6D4 /* MTCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */; };
+		CD9C90FC1E5B0DC1000AA6D4 /* MTCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */; };
 		CD9F536B1E59E86300CB063D /* MTRightHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9F536A1E59E86300CB063D /* MTRightHeaderView.m */; };
 		CDA730F21E57661200F8F01E /* MTCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDA730F11E57661200F8F01E /* MTCategoryView.m */; };
 		CDAC20441E57113A000AF61C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CDAC20431E57113A000AF61C /* main.m */; };
@@ -66,6 +68,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCartView.xib; sourceTree = "<group>"; };
+		CD9C90FA1E5B0DC1000AA6D4 /* MTCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCartView.h; sourceTree = "<group>"; };
+		CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCartView.m; sourceTree = "<group>"; };
 		CD9F53691E59E86300CB063D /* MTRightHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTRightHeaderView.h; sourceTree = "<group>"; };
 		CD9F536A1E59E86300CB063D /* MTRightHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTRightHeaderView.m; sourceTree = "<group>"; };
 		CDA730F01E57661200F8F01E /* MTCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCategoryView.h; sourceTree = "<group>"; };
@@ -199,6 +204,9 @@
 		CD9C90F21E5AC4C8000AA6D4 /* CartView */ = {
 			isa = PBXGroup;
 			children = (
+				CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */,
+				CD9C90FA1E5B0DC1000AA6D4 /* MTCartView.h */,
+				CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */,
 			);
 			name = CartView;
 			sourceTree = "<group>";
@@ -329,8 +337,8 @@
 				CDEA078C1E57DCC000A42835 /* Comment */,
 				CDA730F01E57661200F8F01E /* MTCategoryView.h */,
 				CDA730F11E57661200F8F01E /* MTCategoryView.m */,
-				CDAC20B61E57199C000AF61C /* MTShopViewController.m */,
 				CDAC20B51E57199C000AF61C /* MTShopViewController.h */,
+				CDAC20B61E57199C000AF61C /* MTShopViewController.m */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -535,6 +543,7 @@
 				CDAC20521E57113A000AF61C /* LaunchScreen.storyboard in Resources */,
 				CDEA079D1E582B1200A42835 /* food.json in Resources */,
 				CDAC204F1E57113A000AF61C /* Assets.xcassets in Resources */,
+				CD9C90F91E5B06D8000AA6D4 /* MTCartView.xib in Resources */,
 				CDAC20A81E57157B000AF61C /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +601,7 @@
 				CDEA07D71E58845000A42835 /* UIImage+GIF.m in Sources */,
 				CDAC20821E5711C2000AF61C /* UIViewController+CZAddition.m in Sources */,
 				CDEA07CF1E58845000A42835 /* SDImageCache.m in Sources */,
+				CD9C90FC1E5B0DC1000AA6D4 /* MTCartView.m in Sources */,
 				CDEA07CE1E58845000A42835 /* NSData+ImageContentType.m in Sources */,
 				CDAC20471E57113A000AF61C /* AppDelegate.m in Sources */,
 				CDEA07D51E58845000A42835 /* SDWebImagePrefetcher.m in Sources */,

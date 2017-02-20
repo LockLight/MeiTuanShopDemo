@@ -11,6 +11,8 @@
 #import "MTLeftCell.h"
 #import "MTRightCell.h"
 #import "MTRightHeaderView.h"
+#import "MTCartView.h"
+
 
 static NSString *leftCell = @"leftCell";
 static NSString *rightCell = @"rightCell";
@@ -25,11 +27,15 @@ CAAnimationDelegate
 
 @property (nonatomic, weak) UITableView *leftTableView;
 @property (nonatomic, weak) UITableView *rightTableView;
+@property (nonatomic, weak) MTCartView *cartView;
 
 @end
 
 @implementation MTOrderViewController{
+    //保持左侧左侧菜品种类模型数组
     NSArray<MTFood *> *_foodList;
+    //保持右侧选中菜式模型数组
+    NSMutableArray<MTFoodDetail *> *_selectedFood;
 }
 
 
@@ -39,6 +45,8 @@ CAAnimationDelegate
     self.view.backgroundColor = [UIColor colorWithRed:153 /255.0 green:204 /255.0 blue:205 /255.0 alpha:1];
     
     [self loadData];
+    //初始化
+    _selectedFood = [NSMutableArray array];
 }
 
 #pragma mark  启动默认左侧cell选中行
@@ -73,8 +81,9 @@ CAAnimationDelegate
     UITableView *rightTableView = [[UITableView alloc]init];
     [self.view addSubview:rightTableView];
     //MARK:底部购物栏tableview
-    UITableView *cartView = [[UITableView alloc]init];
-    cartView.backgroundColor = [UIColor colorWithRed:153 /255.0 green:204 /255.0 blue:205 /255.0 alpha:1];
+    UINib *nib = [UINib nibWithNibName:@"MTCartView" bundle:[NSBundle mainBundle]];
+    MTCartView *cartView = [nib instantiateWithOwner:nil options:nil].lastObject;
+    cartView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:cartView];
     
     
@@ -96,9 +105,10 @@ CAAnimationDelegate
         make.left.right.bottom.equalTo(self.view);
     }];
     
-    //MARK:记录tableView
+    //MARK:记录3个视图属性
     _leftTableView = leftTableView;
     _rightTableView = rightTableView;
+    _cartView = cartView;
     
     //MARK:设置行高
     _leftTableView.rowHeight = 55;
@@ -135,6 +145,7 @@ CAAnimationDelegate
     //添加红点动画
     [self startRedAnimation:rightCell andPoint:point];
     //
+    
 }
 
 - (void)startRedAnimation:(MTRightCell *)rightCell andPoint:(CGPoint)point{
@@ -153,7 +164,7 @@ CAAnimationDelegate
     //绘制路径
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:pointToShopView];
-    [path addQuadCurveToPoint:CGPointMake(60, self.view.bounds.size.height -50) controlPoint:CGPointMake(pointToShopView.x -160, pointToShopView.y - 230)];
+    [path addQuadCurveToPoint:CGPointMake(50, self.view.bounds.size.height -50) controlPoint:CGPointMake(pointToShopView.x -160, pointToShopView.y - 230)];
     
     ani.path = path.CGPath;
     ani.duration = 0.3;

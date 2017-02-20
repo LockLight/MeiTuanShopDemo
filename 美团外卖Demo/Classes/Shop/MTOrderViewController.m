@@ -16,7 +16,12 @@ static NSString *leftCell = @"leftCell";
 static NSString *rightCell = @"rightCell";
 static NSString *R_HeaderView = @"rightHeaderView";
 
-@interface MTOrderViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface MTOrderViewController ()
+<UITableViewDataSource,
+UITableViewDelegate,
+MTRightCellDelegate,
+CAAnimationDelegate
+>
 
 @property (nonatomic, weak) UITableView *leftTableView;
 @property (nonatomic, weak) UITableView *rightTableView;
@@ -116,6 +121,39 @@ static NSString *R_HeaderView = @"rightHeaderView";
     
 }
 
+#pragma mark 实现动画对象的代理方法
+
+#pragma mark rightCell中按钮添加红点的代理方法
+- (void)rightCell:(MTRightCell *)rightCell andBtnPoint:(CGPoint)point{
+    //MARK:创建红点视图
+    UIImageView *redPointView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_food_count_bg"]];
+    [self.view addSubview:redPointView];
+    
+    //坐标转换
+    CGPoint pointToShopView = [rightCell convertPoint:point toView:self.view];
+    
+    redPointView.center = pointToShopView;
+    
+    //MARK:关键帧动画创建红点移动路径
+    CAKeyframeAnimation *ani = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+    
+    //绘制路径
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:pointToShopView];
+    [path addQuadCurveToPoint:CGPointMake(60, self.view.bounds.size.height -60) controlPoint:CGPointMake(pointToShopView.x -160, pointToShopView.y - 230)];
+    
+    ani.path = path.CGPath;
+    ani.duration = 0.3;
+    
+    //添加动画代理
+    ani.delegate = self;
+    //动画对象中保持图片对象
+    [ani setValue:redPointView forKey:@"redView"];
+    
+    //动画对象作用给红点
+    [redPointView.layer addAnimation:ani forKey:@"keyAni"];
+}
+
 #pragma mark  自定义cell组头视图的方法实现
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if (tableView == _rightTableView){
@@ -150,6 +188,9 @@ static NSString *R_HeaderView = @"rightHeaderView";
         return cell;
     }
     MTRightCell *cell = [tableView dequeueReusableCellWithIdentifier:rightCell forIndexPath:indexPath];
+    
+    //设置右侧cell的代理
+    cell.delegate = self;
     
     cell.foodDetail = _foodList[indexPath.section].spus[indexPath.row];
     

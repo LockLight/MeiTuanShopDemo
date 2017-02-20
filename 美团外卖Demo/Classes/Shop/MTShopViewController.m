@@ -146,7 +146,7 @@
         make.height.mas_equalTo(height);
     }];
     
-    [self.view  layoutIfNeeded];
+    [self.view layoutIfNeeded];
     
     //可移动的高度
     CGFloat offsetHeight = TOPVIEW_HEIGHT - NAV_STATUS_HEIGHT;

@@ -24,7 +24,10 @@
 
 @end
 
-@implementation MTRightCell
+@implementation MTRightCell{
+    //记录购物车物品数量
+    NSInteger _count;
+}
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -71,6 +74,10 @@
 - (void)setupUI{
     //默认间距
     CGFloat margin = 10;
+    //设置分隔栏从左边顶部开始
+    self.separatorInset = UIEdgeInsetsZero;
+    //设置cell选中样式
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     
     //图片
     UIImageView *dishView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"1"]];
@@ -137,6 +144,7 @@
     [minusBtn sizeToFit];
     minusBtn.hidden = YES;
     
+    
     //数量label
     UILabel *countLbl = [UILabel cz_labelWithText:@"0" fontSize:13 color:[UIColor grayColor]];
     [self.contentView addSubview:countLbl];
@@ -153,6 +161,16 @@
         make.right.equalTo(self.contentView).offset(-margin);
         make.centerY.equalTo(priceLabel);
     }];
+    
+    [countLbl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(plusBtn.mas_left).offset(-margin);
+        make.centerY.equalTo(plusBtn);
+    }];
+    
+    [minusBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(countLbl.mas_left).offset(-margin);
+        make.centerY.equalTo(countLbl);
+    }];
 
     
     //描述
@@ -166,6 +184,10 @@
         make.bottom.equalTo(self.contentView).offset(-margin/2);
     }];
     
+    //监听 + - 按钮点击事件
+    [minusBtn addTarget:self action:@selector(changeCountLabel:) forControlEvents:UIControlEventTouchUpInside];
+    [plusBtn addTarget:self action:@selector(changeCountLabel:) forControlEvents:UIControlEventTouchUpInside];
+    
     //赋值给属性
     _dishView = dishView;
     _nameLabel = nameLabel;
@@ -173,7 +195,28 @@
     _praiseNum = praiseNum;
     _priceLabel = priceLabel;
     _descLabel = descLabel;
+    _plusBtn = plusBtn;
+    _minusBtn = minusBtn;
+    _countLbl = countLbl;
+
 }
 
+- (void)changeCountLabel:(UIButton *)sender{
+    if(sender == _minusBtn){
+        _count--;
+    }else{
+        _count++;
+        
+        
+    }
+    
+    //改变Countlabel数值
+    _countLbl.text = @(_count).description;
+    //设置Countlabel是否可见
+    _countLbl.hidden = !_count;
+    
+    //减号按钮状态随countlabel状态变化
+    _minusBtn.hidden = _countLbl.hidden;
+}
 
 @end

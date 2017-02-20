@@ -9,8 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "MTFoodDetail.h"
 
+@class MTRightCell;
+
+@protocol MTRightCellDelegate <NSObject>
+
+- (void)rightCell:(MTRightCell *)rightCell  andBtnPoint:(CGPoint)point;
+
+@end
+
 @interface MTRightCell : UITableViewCell
 
 @property (nonatomic, strong)  MTFoodDetail *foodDetail;
+@property (nonatomic, weak) id<MTRightCellDelegate> delegate;
 
 @end

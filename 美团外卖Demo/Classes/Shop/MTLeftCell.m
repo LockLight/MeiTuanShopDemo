@@ -56,6 +56,8 @@
         make.size.mas_equalTo(CGSizeMake(4, 33));
     }];
     
+    //设置分隔栏从左边顶部开始
+    self.separatorInset = UIEdgeInsetsZero;
 }
 
 

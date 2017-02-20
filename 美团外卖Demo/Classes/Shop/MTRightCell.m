@@ -25,8 +25,7 @@
 @end
 
 @implementation MTRightCell{
-    //记录购物车物品数量
-    NSInteger _count;
+
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
@@ -67,7 +66,14 @@
     //描述
     _descLabel.text = foodDetail.desc;
     
-
+    //商品购买数
+    _countLbl.text =@(_foodDetail.goodsNum).description;
+    
+    //设置Countlabel是否可见
+    _countLbl.hidden = !_foodDetail.goodsNum;
+    
+    //减号按钮状态
+    _minusBtn.hidden = _countLbl.hidden;
 }
 
 
@@ -203,19 +209,18 @@
 
 - (void)changeCountLabel:(UIButton *)sender{
     if(sender == _minusBtn){
-        _count--;
+        _foodDetail.goodsNum--;
     }else{
-        _count++;
+        _foodDetail.goodsNum++;
         if([self.delegate respondsToSelector:@selector(rightCell: andBtnPoint:)]){
             [self.delegate rightCell:self andBtnPoint:sender.center];
         }
-        
     }
     
     //改变Countlabel数值
-    _countLbl.text = @(_count).description;
+    _countLbl.text = @(_foodDetail.goodsNum).description;
     //设置Countlabel是否可见
-    _countLbl.hidden = !_count;
+    _countLbl.hidden = !_foodDetail.goodsNum;
     
     //减号按钮状态随countlabel状态变化
     _minusBtn.hidden = _countLbl.hidden;

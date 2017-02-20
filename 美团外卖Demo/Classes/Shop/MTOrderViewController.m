@@ -132,6 +132,12 @@ CAAnimationDelegate
 
 #pragma mark rightCell中按钮添加红点的代理方法
 - (void)rightCell:(MTRightCell *)rightCell andBtnPoint:(CGPoint)point{
+    //添加红点动画
+    [self startRedAnimation:rightCell andPoint:point];
+    //
+}
+
+- (void)startRedAnimation:(MTRightCell *)rightCell andPoint:(CGPoint)point{
     //MARK:创建红点视图
     UIImageView *redPointView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_food_count_bg"]];
     [self.view addSubview:redPointView];

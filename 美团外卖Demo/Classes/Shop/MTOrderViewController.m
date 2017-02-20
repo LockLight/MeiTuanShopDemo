@@ -121,7 +121,14 @@ CAAnimationDelegate
     
 }
 
-#pragma mark 实现动画对象的代理方法
+#pragma mark 动画代理方法:动画结束后移除红点
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
+    //方式一
+    //取出动画对象内的视图对象
+    UIImageView *redPointView = [anim valueForKey:@"redView"];
+    [redPointView removeFromSuperview];
+}
+
 
 #pragma mark rightCell中按钮添加红点的代理方法
 - (void)rightCell:(MTRightCell *)rightCell andBtnPoint:(CGPoint)point{
@@ -140,7 +147,7 @@ CAAnimationDelegate
     //绘制路径
     UIBezierPath *path = [UIBezierPath bezierPath];
     [path moveToPoint:pointToShopView];
-    [path addQuadCurveToPoint:CGPointMake(60, self.view.bounds.size.height -60) controlPoint:CGPointMake(pointToShopView.x -160, pointToShopView.y - 230)];
+    [path addQuadCurveToPoint:CGPointMake(60, self.view.bounds.size.height -50) controlPoint:CGPointMake(pointToShopView.x -160, pointToShopView.y - 230)];
     
     ani.path = path.CGPath;
     ani.duration = 0.3;

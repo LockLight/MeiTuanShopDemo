@@ -206,7 +206,9 @@
         _count--;
     }else{
         _count++;
-        
+        if([self.delegate respondsToSelector:@selector(rightCell: andBtnPoint:)]){
+            [self.delegate rightCell:self andBtnPoint:sender.center];
+        }
         
     }
     

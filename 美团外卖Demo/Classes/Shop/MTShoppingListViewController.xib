@@ -11,50 +11,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTShoppingListViewController">
             <connections>
-                <outlet property="view" destination="Ut8-mC-kWu" id="CDI-NN-PcP"/>
+                <outlet property="view" destination="NZt-BT-YVb" id="7N0-Lf-FVy"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="NZt-BT-YVb">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUM-aN-KMM">
-                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zf3-ZU-PiF">
+                    <rect key="frame" x="10" y="0.0" width="50" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="50" id="k7T-tk-OOF"/>
-                        <constraint firstAttribute="height" constant="50" id="xOi-Ss-2iM"/>
+                        <constraint firstAttribute="height" constant="50" id="Wgc-Xp-JNN"/>
+                        <constraint firstAttribute="width" constant="50" id="dtr-uq-7Lm"/>
                     </constraints>
                     <state key="normal" image="button_shoppingCart_noEmpty"/>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_shoppingCart_popTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="i2q-uV-Nt7">
-                    <rect key="frame" x="19" y="50" width="12" height="9"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="12" id="DpJ-PN-xQe"/>
-                        <constraint firstAttribute="height" constant="9" id="Yir-zo-lDc"/>
-                    </constraints>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_shoppingCart_popTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="kc6-nu-X5m">
+                    <rect key="frame" x="29" y="50" width="12" height="9"/>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-mC-kWu">
-                    <rect key="frame" x="0.0" y="59" width="600" height="541"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="brI-jB-xsh">
+                    <rect key="frame" x="0.0" y="59" width="375" height="608"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Ut8-mC-kWu" firstAttribute="top" secondItem="i2q-uV-Nt7" secondAttribute="bottom" id="1Ua-26-Egf"/>
-                <constraint firstItem="nUM-aN-KMM" firstAttribute="top" secondItem="NZt-BT-YVb" secondAttribute="top" id="Cnr-dG-vlz"/>
-                <constraint firstAttribute="bottom" secondItem="Ut8-mC-kWu" secondAttribute="bottom" id="Jqh-eA-aVu"/>
-                <constraint firstItem="nUM-aN-KMM" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" id="WIB-ZL-KmU"/>
-                <constraint firstItem="Ut8-mC-kWu" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" id="aMo-TX-RZD"/>
-                <constraint firstItem="Ut8-mC-kWu" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" id="bdw-O1-5Gq"/>
-                <constraint firstItem="Ut8-mC-kWu" firstAttribute="top" secondItem="i2q-uV-Nt7" secondAttribute="bottom" id="gFi-go-dhk"/>
-                <constraint firstAttribute="trailing" secondItem="Ut8-mC-kWu" secondAttribute="trailing" id="iDO-vw-Tzv"/>
-                <constraint firstAttribute="trailing" secondItem="Ut8-mC-kWu" secondAttribute="trailing" id="lFO-sR-szB"/>
-                <constraint firstAttribute="bottom" secondItem="Ut8-mC-kWu" secondAttribute="bottom" id="x4j-Fo-Zw9"/>
-                <constraint firstItem="i2q-uV-Nt7" firstAttribute="centerX" secondItem="nUM-aN-KMM" secondAttribute="centerX" id="yfT-RQ-noZ"/>
-                <constraint firstItem="i2q-uV-Nt7" firstAttribute="top" secondItem="nUM-aN-KMM" secondAttribute="bottom" id="zXw-76-wQ3"/>
+                <constraint firstItem="brI-jB-xsh" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" id="0Sb-DW-xlm"/>
+                <constraint firstItem="brI-jB-xsh" firstAttribute="top" secondItem="kc6-nu-X5m" secondAttribute="bottom" id="8Ui-0t-VtZ"/>
+                <constraint firstItem="kc6-nu-X5m" firstAttribute="top" secondItem="zf3-ZU-PiF" secondAttribute="bottom" id="9C3-Bl-Ft8"/>
+                <constraint firstAttribute="trailing" secondItem="brI-jB-xsh" secondAttribute="trailing" id="Dkc-vN-cTA"/>
+                <constraint firstItem="zf3-ZU-PiF" firstAttribute="leading" secondItem="NZt-BT-YVb" secondAttribute="leading" constant="10" id="X9e-VM-gYQ"/>
+                <constraint firstAttribute="bottom" secondItem="brI-jB-xsh" secondAttribute="bottom" id="dyx-qE-fdm"/>
+                <constraint firstItem="zf3-ZU-PiF" firstAttribute="top" secondItem="NZt-BT-YVb" secondAttribute="top" id="iD4-W5-YXO"/>
+                <constraint firstItem="kc6-nu-X5m" firstAttribute="centerX" secondItem="zf3-ZU-PiF" secondAttribute="centerX" id="pCl-dn-BcT"/>
             </constraints>
-            <point key="canvasLocation" x="38.5" y="-142.5"/>
+            <point key="canvasLocation" x="-181.5" y="-372.5"/>
         </view>
     </objects>
     <resources>

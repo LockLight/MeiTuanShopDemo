@@ -14,6 +14,7 @@
 #import "MTCartView.h"
 #import "MTShoppingListViewController.h"
 #import "MTFoodDetailViewController.h"
+#import "MTPageContainerViewController.h"
 
 
 static NSString *leftCell = @"leftCell";
@@ -64,10 +65,14 @@ CAAnimationDelegate
         NSIndexPath *idxPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
         [_rightTableView scrollToRowAtIndexPath:idxPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     }else{
-        //创建食品详情控制器
-        MTFoodDetailViewController *foodDetailVC = [[MTFoodDetailViewController alloc]init];
-        //push
-        [self.navigationController pushViewController:foodDetailVC animated:YES];
+        //创建分页控制器
+        MTPageContainerViewController *pageVC = [[MTPageContainerViewController alloc]init];
+        
+        //传递食物模型和当前选中索引
+        pageVC.indexPath = indexPath;
+        pageVC.foodList = _foodList;
+        
+        [self.navigationController pushViewController:pageVC animated:YES];
     }
 }
 

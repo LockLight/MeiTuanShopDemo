@@ -7,7 +7,10 @@
 //
 
 #import "MTBaseViewController.h"
+#import "MTFoodDetail.h"
 
 @interface MTFoodDetailViewController : MTBaseViewController
+
+@property (nonatomic, strong) MTFoodDetail *foodDetail;
 
 @end

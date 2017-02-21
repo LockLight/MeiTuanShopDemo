@@ -20,9 +20,12 @@
     //创建背景蒙版
     UIView *bgView = [[UIView alloc]init];
     bgView.backgroundColor = [UIColor colorWithWhite:0.3 alpha:0.3];
-    bgView.frame = self.containerView.bounds;
-    
     [self.containerView insertSubview:bgView atIndex:0];
+
+    [bgView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.top.bottom.equalTo(self.containerView);
+    }];
+    
     
     //创建点按手势
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self  action:@selector(dismissModalVC:)];

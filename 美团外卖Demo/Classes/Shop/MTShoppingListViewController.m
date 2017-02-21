@@ -28,7 +28,7 @@
         //自定义转场效果
         self.modalPresentationStyle = UIModalPresentationCustom;
         
-//        self.view.backgroundColor = [UIColor clearColor];
+        self.view.backgroundColor = [UIColor clearColor];
         //设置自定义转场代理
         self.transitioningDelegate = self;
     }

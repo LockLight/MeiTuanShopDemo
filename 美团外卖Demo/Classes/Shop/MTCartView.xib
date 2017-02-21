@@ -75,7 +75,7 @@
                 <outlet property="countBtn" destination="GD7-OB-P5b" id="xOE-Rb-wMW"/>
                 <outlet property="priceLabel" destination="rGh-Tc-ijF" id="YgJ-bs-dVW"/>
             </connections>
-            <point key="canvasLocation" x="-99" y="-187"/>
+            <point key="canvasLocation" x="-99.5" y="-187"/>
         </view>
     </objects>
     <resources>

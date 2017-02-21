@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD55E9231E5C31FA00EB75D5 /* MTHeaderDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD55E9221E5C31FA00EB75D5 /* MTHeaderDetailView.xib */; };
+		CD5C12EA1E5C3E6F004FEB15 /* MTPageContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD5C12E91E5C3E6F004FEB15 /* MTPageContainerViewController.m */; };
 		CD9C90F91E5B06D8000AA6D4 /* MTCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */; };
 		CD9C90FC1E5B0DC1000AA6D4 /* MTCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */; };
 		CD9C90FF1E5B1BB6000AA6D4 /* MTShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C90FE1E5B1BB6000AA6D4 /* MTShoppingListViewController.m */; };
@@ -76,6 +77,8 @@
 
 /* Begin PBXFileReference section */
 		CD55E9221E5C31FA00EB75D5 /* MTHeaderDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHeaderDetailView.xib; sourceTree = "<group>"; };
+		CD5C12E81E5C3E6F004FEB15 /* MTPageContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPageContainerViewController.h; sourceTree = "<group>"; };
+		CD5C12E91E5C3E6F004FEB15 /* MTPageContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPageContainerViewController.m; sourceTree = "<group>"; };
 		CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCartView.xib; sourceTree = "<group>"; };
 		CD9C90FA1E5B0DC1000AA6D4 /* MTCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCartView.h; sourceTree = "<group>"; };
 		CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCartView.m; sourceTree = "<group>"; };
@@ -219,6 +222,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD5C12E61E5C3D09004FEB15 /* MTPageVC */ = {
+			isa = PBXGroup;
+			children = (
+				CD5C12E81E5C3E6F004FEB15 /* MTPageContainerViewController.h */,
+				CD5C12E91E5C3E6F004FEB15 /* MTPageContainerViewController.m */,
+			);
+			name = MTPageVC;
+			sourceTree = "<group>";
+		};
 		CD82547B1E5BD7060064A9F3 /* LeftAndRightCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -463,6 +475,7 @@
 		CDEA079B1E5828F200A42835 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				CD5C12E61E5C3D09004FEB15 /* MTPageVC */,
 				CD82547C1E5BD7B50064A9F3 /* MTFoodDetail */,
 				CDEA07941E57DD2500A42835 /* MTOrderViewController.h */,
 				CDEA07951E57DD2500A42835 /* MTOrderViewController.m */,
@@ -621,6 +634,7 @@
 				CDAC20B11E57157B000AF61C /* View+MASAdditions.m in Sources */,
 				CDAC20831E5711C2000AF61C /* MTBaseControl.m in Sources */,
 				CDEA07A71E58623C00A42835 /* MTLeftCell.m in Sources */,
+				CD5C12EA1E5C3E6F004FEB15 /* MTPageContainerViewController.m in Sources */,
 				CDEA07991E58289300A42835 /* MTFood.m in Sources */,
 				CDEA07D91E58845000A42835 /* UIImage+WebP.m in Sources */,
 				CD9C91071E5B2750000AA6D4 /* MTPresentationController.m in Sources */,

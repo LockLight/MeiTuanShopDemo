@@ -31,6 +31,19 @@
     return [nib instantiateWithOwner:nil options:nil].lastObject;
 }
 
+- (void)setFoodDetail:(MTFoodDetail *)foodDetail{
+    _foodDetail = foodDetail;
+    
+    //名称
+    _nameLabel.text = _foodDetail.name;
+    //月售
+    _saleCount.text = _foodDetail.month_saled_content;
+    //价格
+    _priceLabel.text = [NSString stringWithFormat:@"￥%.2f",_foodDetail.min_price];
+    //描述
+    _descLabel.text = [NSString stringWithFormat:@"%@",_foodDetail.desc];
+}
+
 - (IBAction)addToCart:(UIButton *)sender {
 }
 

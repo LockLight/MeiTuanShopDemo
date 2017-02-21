@@ -46,8 +46,8 @@
                     <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【官方首测】CHERRY MX BOARD 8.0机械键盘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO3-xv-g8D">
-                    <rect key="frame" x="40" y="160.5" width="279" height="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【官方首测】CHERRY MX BOARD 8.0机械键盘" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO3-xv-g8D">
+                    <rect key="frame" x="40" y="160.5" width="295" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -76,7 +76,8 @@
                 <constraint firstItem="gdm-gf-kRG" firstAttribute="leading" secondItem="SKY-AB-nJW" secondAttribute="leading" id="I6Y-1a-cKy"/>
                 <constraint firstItem="jrO-fP-8Ny" firstAttribute="top" secondItem="rv6-8c-8Gn" secondAttribute="bottom" constant="10" id="LXN-ii-Tg7"/>
                 <constraint firstItem="jrO-fP-8Ny" firstAttribute="top" secondItem="SKY-AB-nJW" secondAttribute="bottom" constant="10" id="eW5-6R-xAX"/>
-                <constraint firstItem="fO3-xv-g8D" firstAttribute="leading" secondItem="gdm-gf-kRG" secondAttribute="leading" id="ph7-sB-krA"/>
+                <constraint firstItem="fO3-xv-g8D" firstAttribute="leading" secondItem="iXq-sj-hlf" secondAttribute="leading" constant="40" id="kFO-QY-df5"/>
+                <constraint firstAttribute="trailing" secondItem="fO3-xv-g8D" secondAttribute="trailing" constant="40" id="oyl-bu-A4z"/>
                 <constraint firstItem="efG-up-82w" firstAttribute="top" secondItem="iXq-sj-hlf" secondAttribute="top" constant="36" id="sh8-Wf-Paa"/>
                 <constraint firstItem="jrO-fP-8Ny" firstAttribute="leading" secondItem="iXq-sj-hlf" secondAttribute="leading" id="tug-9Q-PlR"/>
                 <constraint firstItem="1rL-2b-ibG" firstAttribute="top" secondItem="efG-up-82w" secondAttribute="bottom" constant="10" id="veh-q3-Fcd"/>

@@ -8,20 +8,34 @@
 
 #import "MTFoodDetailViewController.h"
 #import "MTHeaderDetailView.h"
+#import "UIImageView+WebCache.h"
 
 @interface MTFoodDetailViewController ()<UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UITableView *foodDetailTB;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *picHeightConstraint;
+@property (nonatomic, weak) MTHeaderDetailView *headerDetailView;
 
 @end
 
 @implementation MTFoodDetailViewController
 
+//设置图片,不能在setter方法内赋值,视图可能还未创建
+- (void)viewWillAppear:(BOOL)animated{
+    _headerDetailView.foodDetail = _foodDetail;
+    
+    //使用第三方框架加载图片
+    NSString *picStr = [_foodDetail.picture stringByDeletingPathExtension];
+    NSURL *url = [NSURL URLWithString:picStr];
+    
+    [_iconView sd_setImageWithURL:url];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+
 }
 
 #pragma mark 代理方法:监听tableView滚动
@@ -43,6 +57,10 @@
     //创建表头视图
     MTHeaderDetailView *headerView = [MTHeaderDetailView headerDetailView];
     _foodDetailTB.tableHeaderView = headerView;
+    
+    
+    //记录表头视图
+    _headerDetailView = headerView;
 }
 
 @end

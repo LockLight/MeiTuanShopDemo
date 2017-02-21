@@ -8,10 +8,13 @@
 
 #import "MTBaseViewController.h"
 #import "MTFood.h"
+#import "MTFoodDetail.h"
 
 @interface MTPageContainerViewController : MTBaseViewController
 
 @property (nonatomic, strong) NSArray<MTFood *> *foodList;
 
-@property (nonatomic, strong) NSIndexPath *indexPath;
+@property (nonatomic, strong) NSIndexPath *selectPath;
+
+@property (nonatomic, strong) NSMutableArray<MTFoodDetail *> *selectedFoods;
 @end

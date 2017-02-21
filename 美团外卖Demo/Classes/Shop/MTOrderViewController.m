@@ -68,9 +68,10 @@ CAAnimationDelegate
         //创建分页控制器
         MTPageContainerViewController *pageVC = [[MTPageContainerViewController alloc]init];
         
-        //传递食物模型和当前选中索引
-        pageVC.indexPath = indexPath;
+        //传递食物模型和当前选中索引,选中食物详情模型
+        pageVC.selectPath = indexPath;
         pageVC.foodList = _foodList;
+        pageVC.selectedFoods = _selectedFood;
         
         [self.navigationController pushViewController:pageVC animated:YES];
     }

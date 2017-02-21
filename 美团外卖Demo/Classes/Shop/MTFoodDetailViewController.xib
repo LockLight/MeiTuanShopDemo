@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTFoodDetailViewController">
             <connections>
-                <outlet property="foodDetailTB" destination="BGX-XU-Zmu" id="DqH-x1-Ese"/>
-                <outlet property="heightConstraint" destination="PUl-71-VFa" id="pGB-8u-gZl"/>
-                <outlet property="iconView" destination="7PK-bY-Bpa" id="GQY-FK-Gpl"/>
+                <outlet property="foodDetailTB" destination="fgm-un-2q7" id="aQW-yD-oUP"/>
+                <outlet property="iconView" destination="35G-wr-uBL" id="feO-4e-CcK"/>
+                <outlet property="picHeightConstraint" destination="UCn-2C-2tP" id="UK5-Wp-wfM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,26 +22,26 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="7PK-bY-Bpa">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="35G-wr-uBL">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="PUl-71-VFa"/>
+                        <constraint firstAttribute="height" constant="150" id="UCn-2C-2tP"/>
                     </constraints>
                 </imageView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BGX-XU-Zmu">
-                    <rect key="frame" x="0.0" y="150" width="375" height="517"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fgm-un-2q7">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="7PK-bY-Bpa" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4Zm-rI-ggD"/>
-                <constraint firstItem="BGX-XU-Zmu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="MIM-34-MZG"/>
-                <constraint firstItem="BGX-XU-Zmu" firstAttribute="top" secondItem="7PK-bY-Bpa" secondAttribute="bottom" id="aaG-BR-tG8"/>
-                <constraint firstItem="7PK-bY-Bpa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="feD-JJ-pMT"/>
-                <constraint firstAttribute="trailing" secondItem="7PK-bY-Bpa" secondAttribute="trailing" id="gal-Yd-inw"/>
-                <constraint firstAttribute="trailing" secondItem="BGX-XU-Zmu" secondAttribute="trailing" id="vIi-H1-o3N"/>
-                <constraint firstAttribute="bottom" secondItem="BGX-XU-Zmu" secondAttribute="bottom" id="yhg-ut-y1Z"/>
+                <constraint firstItem="fgm-un-2q7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0j2-Pg-AZN"/>
+                <constraint firstItem="35G-wr-uBL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4Fg-dU-w76"/>
+                <constraint firstItem="35G-wr-uBL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6KU-gO-bx9"/>
+                <constraint firstItem="fgm-un-2q7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A4H-QK-FyJ"/>
+                <constraint firstAttribute="trailing" secondItem="35G-wr-uBL" secondAttribute="trailing" id="Xeg-NZ-5OE"/>
+                <constraint firstAttribute="trailing" secondItem="fgm-un-2q7" secondAttribute="trailing" id="h4U-ZS-An1"/>
+                <constraint firstAttribute="bottom" secondItem="fgm-un-2q7" secondAttribute="bottom" id="qcJ-BA-bsq"/>
             </constraints>
         </view>
     </objects>

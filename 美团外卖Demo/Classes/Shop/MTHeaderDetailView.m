@@ -8,14 +8,31 @@
 
 #import "MTHeaderDetailView.h"
 
+@interface MTHeaderDetailView ()
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *saleCount;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descLabel;
+@property (weak, nonatomic) IBOutlet UIButton *cartBtn;
+
+@end
+
 @implementation MTHeaderDetailView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)awakeFromNib{
+    [super awakeFromNib];
+    
+    _cartBtn.layer.cornerRadius = 20;
+    _cartBtn.layer.masksToBounds = YES;
 }
-*/
+
++ (instancetype)headerDetailView{
+    UINib *nib = [UINib nibWithNibName:@"MTHeaderDetailView" bundle:nil];
+    return [nib instantiateWithOwner:nil options:nil].lastObject;
+}
+
+- (IBAction)addToCart:(UIButton *)sender {
+}
+
 
 @end

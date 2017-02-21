@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iXq-sj-hlf" customClass="MTHeaderDetailView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="地狱饭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efG-up-82w">
+                    <rect key="frame" x="40" y="36" width="52" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="月售22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rL-2b-ibG">
+                    <rect key="frame" x="40" y="66.5" width="42.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥5.90" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-AB-nJW">
+                    <rect key="frame" x="40" y="92.5" width="52" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrO-fP-8Ny">
+                    <rect key="frame" x="0.0" y="123.5" width="375" height="1"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="eeu-qV-M4I"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="商品评价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdm-gf-kRG">
+                    <rect key="frame" x="40" y="134.5" width="53.5" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="【官方首测】CHERRY MX BOARD 8.0机械键盘" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fO3-xv-g8D">
+                    <rect key="frame" x="40" y="160.5" width="279" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.53333333329999999" green="0.53333333329999999" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rv6-8c-8Gn">
+                    <rect key="frame" x="240" y="73.5" width="120" height="40"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="JJD-or-Gbd"/>
+                        <constraint firstAttribute="height" constant="40" id="d0p-eq-Sfc"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="加入购物车" image="btn_add_to_shopping_cart"/>
+                    <connections>
+                        <action selector="addToCart:" destination="iXq-sj-hlf" eventType="touchUpInside" id="qgO-R2-0O2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gdm-gf-kRG" firstAttribute="top" secondItem="jrO-fP-8Ny" secondAttribute="bottom" constant="10" id="34b-h3-LEj"/>
+                <constraint firstAttribute="trailing" secondItem="jrO-fP-8Ny" secondAttribute="trailing" id="48B-5I-pWB"/>
+                <constraint firstItem="SKY-AB-nJW" firstAttribute="leading" secondItem="1rL-2b-ibG" secondAttribute="leading" id="5DV-ly-lga"/>
+                <constraint firstItem="efG-up-82w" firstAttribute="leading" secondItem="iXq-sj-hlf" secondAttribute="leading" constant="40" id="D9K-ZI-ZLK"/>
+                <constraint firstItem="SKY-AB-nJW" firstAttribute="top" secondItem="1rL-2b-ibG" secondAttribute="bottom" constant="10" id="HgD-7m-sDC"/>
+                <constraint firstItem="gdm-gf-kRG" firstAttribute="leading" secondItem="SKY-AB-nJW" secondAttribute="leading" id="I6Y-1a-cKy"/>
+                <constraint firstItem="jrO-fP-8Ny" firstAttribute="top" secondItem="rv6-8c-8Gn" secondAttribute="bottom" constant="10" id="LXN-ii-Tg7"/>
+                <constraint firstItem="jrO-fP-8Ny" firstAttribute="top" secondItem="SKY-AB-nJW" secondAttribute="bottom" constant="10" id="eW5-6R-xAX"/>
+                <constraint firstItem="fO3-xv-g8D" firstAttribute="leading" secondItem="gdm-gf-kRG" secondAttribute="leading" id="ph7-sB-krA"/>
+                <constraint firstItem="efG-up-82w" firstAttribute="top" secondItem="iXq-sj-hlf" secondAttribute="top" constant="36" id="sh8-Wf-Paa"/>
+                <constraint firstItem="jrO-fP-8Ny" firstAttribute="leading" secondItem="iXq-sj-hlf" secondAttribute="leading" id="tug-9Q-PlR"/>
+                <constraint firstItem="1rL-2b-ibG" firstAttribute="top" secondItem="efG-up-82w" secondAttribute="bottom" constant="10" id="veh-q3-Fcd"/>
+                <constraint firstItem="1rL-2b-ibG" firstAttribute="leading" secondItem="efG-up-82w" secondAttribute="leading" id="vvW-XA-190"/>
+                <constraint firstItem="fO3-xv-g8D" firstAttribute="top" secondItem="gdm-gf-kRG" secondAttribute="bottom" constant="10" id="yHn-8G-Wjf"/>
+                <constraint firstAttribute="trailing" secondItem="rv6-8c-8Gn" secondAttribute="trailing" constant="15" id="zM6-dM-phZ"/>
+            </constraints>
+            <connections>
+                <outlet property="cartBtn" destination="rv6-8c-8Gn" id="PKw-2r-jMR"/>
+                <outlet property="descLabel" destination="fO3-xv-g8D" id="z2C-77-O5e"/>
+                <outlet property="nameLabel" destination="efG-up-82w" id="VGS-eg-F6Q"/>
+                <outlet property="priceLabel" destination="SKY-AB-nJW" id="v5B-xq-HTD"/>
+                <outlet property="saleCount" destination="1rL-2b-ibG" id="tPd-k3-9Ki"/>
+            </connections>
+            <point key="canvasLocation" x="-63.5" y="-641.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="btn_add_to_shopping_cart" width="17" height="17"/>
+    </resources>
+</document>

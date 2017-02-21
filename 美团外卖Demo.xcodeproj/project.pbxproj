@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD55E9231E5C31FA00EB75D5 /* MTHeaderDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD55E9221E5C31FA00EB75D5 /* MTHeaderDetailView.xib */; };
 		CD9C90F91E5B06D8000AA6D4 /* MTCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */; };
 		CD9C90FC1E5B0DC1000AA6D4 /* MTCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */; };
 		CD9C90FF1E5B1BB6000AA6D4 /* MTShoppingListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD9C90FE1E5B1BB6000AA6D4 /* MTShoppingListViewController.m */; };
@@ -46,7 +47,7 @@
 		CDC0B1E71E5B59D600551B1F /* MTShoppingListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC0B1E61E5B59D600551B1F /* MTShoppingListViewController.xib */; };
 		CDD40A331E5C0387009B1B9B /* MTFoodDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD40A311E5C0387009B1B9B /* MTFoodDetailViewController.m */; };
 		CDD40A341E5C0387009B1B9B /* MTFoodDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDD40A321E5C0387009B1B9B /* MTFoodDetailViewController.xib */; };
-		CDD40A371E5C086F009B1B9B /* MTHeaderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD40A361E5C086F009B1B9B /* MTHeaderDetailView.m */; };
+		CDD40A3C1E5C2D8A009B1B9B /* MTHeaderDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CDD40A3B1E5C2D8A009B1B9B /* MTHeaderDetailView.m */; };
 		CDEA07901E57DD0100A42835 /* MTBussinessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA078F1E57DD0100A42835 /* MTBussinessViewController.m */; };
 		CDEA07931E57DD1600A42835 /* MTCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07921E57DD1600A42835 /* MTCommentViewController.m */; };
 		CDEA07961E57DD2500A42835 /* MTOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDEA07951E57DD2500A42835 /* MTOrderViewController.m */; };
@@ -74,6 +75,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD55E9221E5C31FA00EB75D5 /* MTHeaderDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTHeaderDetailView.xib; sourceTree = "<group>"; };
 		CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTCartView.xib; sourceTree = "<group>"; };
 		CD9C90FA1E5B0DC1000AA6D4 /* MTCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCartView.h; sourceTree = "<group>"; };
 		CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCartView.m; sourceTree = "<group>"; };
@@ -154,8 +156,8 @@
 		CDD40A301E5C0387009B1B9B /* MTFoodDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodDetailViewController.h; sourceTree = "<group>"; };
 		CDD40A311E5C0387009B1B9B /* MTFoodDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetailViewController.m; sourceTree = "<group>"; };
 		CDD40A321E5C0387009B1B9B /* MTFoodDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTFoodDetailViewController.xib; sourceTree = "<group>"; };
-		CDD40A351E5C086F009B1B9B /* MTHeaderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHeaderDetailView.h; sourceTree = "<group>"; };
-		CDD40A361E5C086F009B1B9B /* MTHeaderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHeaderDetailView.m; sourceTree = "<group>"; };
+		CDD40A3A1E5C2D8A009B1B9B /* MTHeaderDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHeaderDetailView.h; sourceTree = "<group>"; };
+		CDD40A3B1E5C2D8A009B1B9B /* MTHeaderDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHeaderDetailView.m; sourceTree = "<group>"; };
 		CDEA078E1E57DD0100A42835 /* MTBussinessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBussinessViewController.h; sourceTree = "<group>"; };
 		CDEA078F1E57DD0100A42835 /* MTBussinessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBussinessViewController.m; sourceTree = "<group>"; };
 		CDEA07911E57DD1600A42835 /* MTCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommentViewController.h; sourceTree = "<group>"; };
@@ -236,8 +238,9 @@
 				CDD40A301E5C0387009B1B9B /* MTFoodDetailViewController.h */,
 				CDD40A311E5C0387009B1B9B /* MTFoodDetailViewController.m */,
 				CDD40A321E5C0387009B1B9B /* MTFoodDetailViewController.xib */,
-				CDD40A351E5C086F009B1B9B /* MTHeaderDetailView.h */,
-				CDD40A361E5C086F009B1B9B /* MTHeaderDetailView.m */,
+				CDD40A3A1E5C2D8A009B1B9B /* MTHeaderDetailView.h */,
+				CDD40A3B1E5C2D8A009B1B9B /* MTHeaderDetailView.m */,
+				CD55E9221E5C31FA00EB75D5 /* MTHeaderDetailView.xib */,
 			);
 			name = MTFoodDetail;
 			sourceTree = "<group>";
@@ -589,6 +592,7 @@
 				CD9C90F91E5B06D8000AA6D4 /* MTCartView.xib in Resources */,
 				CDC0B1E71E5B59D600551B1F /* MTShoppingListViewController.xib in Resources */,
 				CDAC20A81E57157B000AF61C /* Info.plist in Resources */,
+				CD55E9231E5C31FA00EB75D5 /* MTHeaderDetailView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -624,7 +628,7 @@
 				CD9F536B1E59E86300CB063D /* MTRightHeaderView.m in Sources */,
 				CDEA07D31E58845000A42835 /* SDWebImageDownloaderOperation.m in Sources */,
 				CDAC207D1E5711C2000AF61C /* UIButton+CZAddition.m in Sources */,
-				CDD40A371E5C086F009B1B9B /* MTHeaderDetailView.m in Sources */,
+				CDD40A3C1E5C2D8A009B1B9B /* MTHeaderDetailView.m in Sources */,
 				CDEA07CD1E58845000A42835 /* MKAnnotationView+WebCache.m in Sources */,
 				CDEA07AA1E586E0400A42835 /* MTRightCell.m in Sources */,
 				CDA730F21E57661200F8F01E /* MTCategoryView.m in Sources */,

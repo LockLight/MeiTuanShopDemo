@@ -7,7 +7,13 @@
 //
 
 #import "MTBaseView.h"
+#import "MTFoodDetail.h"
+
 
 @interface MTHeaderDetailView : MTBaseView
+
+@property (nonatomic, strong) MTFoodDetail *foodDetail;
+
++ (instancetype)headerDetailView;
 
 @end

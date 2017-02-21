@@ -7,11 +7,13 @@
 //
 
 #import "MTFoodDetailViewController.h"
+#import "MTHeaderDetailView.h"
 
 @interface MTFoodDetailViewController ()<UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
 @property (weak, nonatomic) IBOutlet UITableView *foodDetailTB;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *picHeightConstraint;
 
 @end
 
@@ -24,7 +26,7 @@
 
 #pragma mark 代理方法:监听tableView滚动
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    _heightConstraint.constant = ABS(scrollView.contentOffset.y);
+    _picHeightConstraint.constant = ABS(scrollView.contentOffset.y);
 }
 
 - (void)setupUI{
@@ -33,11 +35,14 @@
     //设置tabelView背景色透明
     _foodDetailTB.backgroundColor =  [UIColor clearColor];
     //消除tableView单元格分割线
-//    _foodDetailTB.tableFooterView = [[UIView alloc]init];
+    _foodDetailTB.tableFooterView = [[UIView alloc]init];
     
     //设置tableView代理
     _foodDetailTB.delegate = self;
     
+    //创建表头视图
+    MTHeaderDetailView *headerView = [MTHeaderDetailView headerDetailView];
+    _foodDetailTB.tableHeaderView = headerView;
 }
 
 @end

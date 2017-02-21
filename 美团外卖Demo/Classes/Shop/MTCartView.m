@@ -53,7 +53,7 @@
         _priceLabel.text = @"购物车空空如也~";
     }else{
         _priceLabel.textColor = [UIColor redColor];
-        _priceLabel.text = _priceLabel.text = [NSString stringWithFormat:@"￥%.1f",totalPrice];
+        _priceLabel.text = [NSString stringWithFormat:@"￥%.1f",totalPrice];
     }
     
     //差价

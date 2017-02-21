@@ -10,6 +10,8 @@
 
 @implementation MTPresentationController
 
+
+//重写容器视图布局
 - (void)containerViewWillLayoutSubviews{
     //取出被弹出控制器的根视图
     UIView *modalView = self.presentedView;

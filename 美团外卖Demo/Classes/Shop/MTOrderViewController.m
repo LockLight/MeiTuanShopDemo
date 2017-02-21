@@ -13,6 +13,7 @@
 #import "MTRightHeaderView.h"
 #import "MTCartView.h"
 #import "MTShoppingListViewController.h"
+#import "MTFoodDetailViewController.h"
 
 
 static NSString *leftCell = @"leftCell";
@@ -62,6 +63,11 @@ CAAnimationDelegate
 
         NSIndexPath *idxPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.row];
         [_rightTableView scrollToRowAtIndexPath:idxPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }else{
+        //创建食品详情控制器
+        MTFoodDetailViewController *foodDetailVC = [[MTFoodDetailViewController alloc]init];
+        //push
+        [self.navigationController pushViewController:foodDetailVC animated:YES];
     }
 }
 

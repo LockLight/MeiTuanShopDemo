@@ -222,16 +222,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CD5C12E61E5C3D09004FEB15 /* MTPageVC */ = {
+		CD5C12E61E5C3D09004FEB15 /* MTPageVC(分页控制器) */ = {
 			isa = PBXGroup;
 			children = (
 				CD5C12E81E5C3E6F004FEB15 /* MTPageContainerViewController.h */,
 				CD5C12E91E5C3E6F004FEB15 /* MTPageContainerViewController.m */,
 			);
-			name = MTPageVC;
+			name = "MTPageVC(分页控制器)";
 			sourceTree = "<group>";
 		};
-		CD82547B1E5BD7060064A9F3 /* LeftAndRightCell */ = {
+		CD82547B1E5BD7060064A9F3 /* LeftAndRightCell(主菜单左右侧单元格) */ = {
 			isa = PBXGroup;
 			children = (
 				CD9F53691E59E86300CB063D /* MTRightHeaderView.h */,
@@ -241,10 +241,10 @@
 				CDEA07A81E586E0400A42835 /* MTRightCell.h */,
 				CDEA07A91E586E0400A42835 /* MTRightCell.m */,
 			);
-			name = LeftAndRightCell;
+			name = "LeftAndRightCell(主菜单左右侧单元格)";
 			sourceTree = "<group>";
 		};
-		CD82547C1E5BD7B50064A9F3 /* MTFoodDetail */ = {
+		CD82547C1E5BD7B50064A9F3 /* MTFoodDetailVC(食物详情菜单) */ = {
 			isa = PBXGroup;
 			children = (
 				CDD40A301E5C0387009B1B9B /* MTFoodDetailViewController.h */,
@@ -254,17 +254,31 @@
 				CDD40A3B1E5C2D8A009B1B9B /* MTHeaderDetailView.m */,
 				CD55E9221E5C31FA00EB75D5 /* MTHeaderDetailView.xib */,
 			);
-			name = MTFoodDetail;
+			name = "MTFoodDetailVC(食物详情菜单)";
 			sourceTree = "<group>";
 		};
-		CD9C90F21E5AC4C8000AA6D4 /* CartView */ = {
+		CD89F4521E5D422C00667932 /* MTOrderVC(菜单) */ = {
+			isa = PBXGroup;
+			children = (
+				CDEA07941E57DD2500A42835 /* MTOrderViewController.h */,
+				CDEA07951E57DD2500A42835 /* MTOrderViewController.m */,
+				CD9C90FD1E5B1BB6000AA6D4 /* MTShoppingListViewController.h */,
+				CD9C90FE1E5B1BB6000AA6D4 /* MTShoppingListViewController.m */,
+				CD9C91051E5B2750000AA6D4 /* MTPresentationController.h */,
+				CD9C91061E5B2750000AA6D4 /* MTPresentationController.m */,
+				CDC0B1E61E5B59D600551B1F /* MTShoppingListViewController.xib */,
+			);
+			name = "MTOrderVC(菜单)";
+			sourceTree = "<group>";
+		};
+		CD9C90F21E5AC4C8000AA6D4 /* CartView(购物车视图) */ = {
 			isa = PBXGroup;
 			children = (
 				CD9C90F81E5B06D8000AA6D4 /* MTCartView.xib */,
 				CD9C90FA1E5B0DC1000AA6D4 /* MTCartView.h */,
 				CD9C90FB1E5B0DC1000AA6D4 /* MTCartView.m */,
 			);
-			name = CartView;
+			name = "CartView(购物车视图)";
 			sourceTree = "<group>";
 		};
 		CDAC20361E57113A000AF61C = {
@@ -388,13 +402,13 @@
 		CDAC20871E571212000AF61C /* Shop */ = {
 			isa = PBXGroup;
 			children = (
+				CDAC20B61E57199C000AF61C /* MTShopViewController.m */,
+				CDAC20B51E57199C000AF61C /* MTShopViewController.h */,
+				CDA730F11E57661200F8F01E /* MTCategoryView.m */,
+				CDA730F01E57661200F8F01E /* MTCategoryView.h */,
 				CDEA078A1E57DCA700A42835 /* Order */,
 				CDEA078D1E57DCCA00A42835 /* Bussiness */,
 				CDEA078C1E57DCC000A42835 /* Comment */,
-				CDA730F01E57661200F8F01E /* MTCategoryView.h */,
-				CDA730F11E57661200F8F01E /* MTCategoryView.m */,
-				CDAC20B51E57199C000AF61C /* MTShopViewController.h */,
-				CDAC20B61E57199C000AF61C /* MTShopViewController.m */,
 			);
 			path = Shop;
 			sourceTree = "<group>";
@@ -435,9 +449,9 @@
 		CDEA078A1E57DCA700A42835 /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				CDEA079A1E5828C600A42835 /* Model */,
 				CDEA07A11E582B8900A42835 /* View */,
 				CDEA079B1E5828F200A42835 /* Controller */,
-				CDEA079A1E5828C600A42835 /* Model */,
 			);
 			name = Order;
 			sourceTree = "<group>";
@@ -475,15 +489,9 @@
 		CDEA079B1E5828F200A42835 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				CD5C12E61E5C3D09004FEB15 /* MTPageVC */,
-				CD82547C1E5BD7B50064A9F3 /* MTFoodDetail */,
-				CDEA07941E57DD2500A42835 /* MTOrderViewController.h */,
-				CDEA07951E57DD2500A42835 /* MTOrderViewController.m */,
-				CD9C90FD1E5B1BB6000AA6D4 /* MTShoppingListViewController.h */,
-				CD9C90FE1E5B1BB6000AA6D4 /* MTShoppingListViewController.m */,
-				CD9C91051E5B2750000AA6D4 /* MTPresentationController.h */,
-				CD9C91061E5B2750000AA6D4 /* MTPresentationController.m */,
-				CDC0B1E61E5B59D600551B1F /* MTShoppingListViewController.xib */,
+				CD89F4521E5D422C00667932 /* MTOrderVC(菜单) */,
+				CD82547C1E5BD7B50064A9F3 /* MTFoodDetailVC(食物详情菜单) */,
+				CD5C12E61E5C3D09004FEB15 /* MTPageVC(分页控制器) */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -491,8 +499,8 @@
 		CDEA07A11E582B8900A42835 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CD9C90F21E5AC4C8000AA6D4 /* CartView */,
-				CD82547B1E5BD7060064A9F3 /* LeftAndRightCell */,
+				CD9C90F21E5AC4C8000AA6D4 /* CartView(购物车视图) */,
+				CD82547B1E5BD7060064A9F3 /* LeftAndRightCell(主菜单左右侧单元格) */,
 			);
 			name = View;
 			sourceTree = "<group>";

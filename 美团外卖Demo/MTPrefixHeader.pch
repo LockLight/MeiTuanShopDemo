@@ -15,6 +15,7 @@
 #import "CZAdditions.h"
 
 #define NAV_STATUS_HEIGHT 64
+#define ADDFOOD @"addFoodToCart"
 
 #endif
 

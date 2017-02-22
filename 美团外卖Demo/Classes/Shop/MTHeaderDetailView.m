@@ -45,6 +45,12 @@
 }
 
 - (IBAction)addToCart:(UIButton *)sender {
+    //点击一次当前食物+1
+    _foodDetail.goodsNum ++;
+    //创建通知
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    //发送通知消息
+    [center postNotificationName:ADDFOOD object:self userInfo:@{@"position":[NSValue valueWithCGPoint:sender.center]}];
 }
 
 

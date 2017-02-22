@@ -42,8 +42,10 @@
     
     for (MTFoodDetail *foodDetail in _selectedFoods) {
         totalCount += foodDetail.goodsNum;
+        
         totalPrice += foodDetail.goodsNum * foodDetail.min_price;
     }
+    
     
     //菜式总数
     [_countBtn setTitle:@(totalCount).description forState:UIControlStateNormal];

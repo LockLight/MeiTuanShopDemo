@@ -15,6 +15,7 @@
 #import "MTShoppingListViewController.h"
 #import "MTFoodDetailViewController.h"
 #import "MTPageContainerViewController.h"
+#import "MTHeaderDetailView.h"
 
 
 static NSString *leftCell = @"leftCell";
@@ -108,7 +109,7 @@ CAAnimationDelegate
     cartView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:cartView];
     
-    //监听购物栏视图的通知时间
+    //监听购物栏视图的通知事件
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(showShoppingListVc:) name:@"showShoppingList" object:cartView];
     
@@ -155,6 +156,33 @@ CAAnimationDelegate
     [rightTableView registerClass:[MTRightHeaderView class] forHeaderFooterViewReuseIdentifier:R_HeaderView];
     rightTableView.sectionHeaderHeight = 32;
     
+    //MARK:监听通知
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(addToCartView:) name:ADDFOOD object:nil];
+}
+
+#pragma mark 监听到通知后实现的方法
+- (void)addToCartView:(NSNotification *)noticeCenter{
+    //获取发送通知对象
+    MTHeaderDetailView *headDetailView = noticeCenter.object;
+//    NSLog(@"detail = %@",headDetailView.foodDetail);
+    //判断 是否添加
+    if(![_selectedFood containsObject:headDetailView.foodDetail]){
+        [_selectedFood addObject:headDetailView.foodDetail];
+    }
+    
+    NSUInteger count = 0;
+    
+    for (MTFoodDetail * slDetail in _selectedFood) {
+        count += slDetail.goodsNum;
+    }
+    
+    NSLog(@"order count = %zd",count);
+    
+    
+    //重新赋值刷新购物车视图
+    _cartView.selectedFoods = _selectedFood;
+    //刷新右侧tableView视图
+    [_rightTableView reloadData];
 }
 
 #pragma mark 动画代理方法:动画结束后移除红点
